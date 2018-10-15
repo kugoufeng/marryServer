@@ -5,7 +5,7 @@
   <!-- test文件路径 -->
   <property name="TEST_FILE_PATH" value="d:/test.log" />
   <!-- pro文件路径 -->
-  <property name="PRO_FILE_PATH" value="/opt/test/log" />
+  <property name="PRO_FILE_PATH" value="/root/log" />
 
   <!-- 开发环境 -->
   <springProfile name="dev">
@@ -14,7 +14,7 @@
         <pattern>${PATTERN}</pattern>
       </encoder>
     </appender>
-    <logger name="com.light.springboot" level="debug" />
+    <logger name="cn.jeremy.marry" level="debug" />
     <root level="info">
       <appender-ref ref="CONSOLE" />
     </root>
@@ -53,7 +53,10 @@
         <pattern>${PATTERN}</pattern>
       </layout>
     </appender>
-    <root level="warn">
+    <logger name="cn.jeremy.marry" level="debug" >
+      <appender-ref ref="PROD_FILE" />
+    </logger>
+    <root level="error">
       <appender-ref ref="PROD_FILE" />
     </root>
   </springProfile>
